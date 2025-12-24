@@ -34,12 +34,57 @@ function toggleTheme() {
 // Inicializar tema antes de DOMContentLoaded para evitar flash
 initTheme();
 
+// ===== MENÚ MÓVIL =====
+function toggleMobileMenu() {
+    const nav = document.querySelector('.nav');
+    const overlay = document.querySelector('.nav-overlay');
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+
+    nav.classList.toggle('active');
+    overlay.classList.toggle('active');
+
+    // Cambiar icono hamburguesa/cerrar
+    const icon = menuToggle.querySelector('i');
+    if (nav.classList.contains('active')) {
+        icon.className = 'fas fa-times';
+        document.body.style.overflow = 'hidden'; // Prevenir scroll cuando el menú está abierto
+    } else {
+        icon.className = 'fas fa-bars';
+        document.body.style.overflow = '';
+    }
+}
+
+function closeMobileMenu() {
+    const nav = document.querySelector('.nav');
+    const overlay = document.querySelector('.nav-overlay');
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+
+    nav.classList.remove('active');
+    overlay.classList.remove('active');
+
+    const icon = menuToggle.querySelector('i');
+    icon.className = 'fas fa-bars';
+    document.body.style.overflow = '';
+}
+
 // Navegación activa
 document.addEventListener('DOMContentLoaded', function() {
     // Event listener para el botón de tema
     const themeToggle = document.getElementById('themeToggle');
     if (themeToggle) {
         themeToggle.addEventListener('click', toggleTheme);
+    }
+
+    // Event listeners para menú móvil
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navOverlay = document.querySelector('.nav-overlay');
+
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+    }
+
+    if (navOverlay) {
+        navOverlay.addEventListener('click', closeMobileMenu);
     }
 
     // Detectar cambios en preferencia del sistema
@@ -53,6 +98,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Actualizar navegación en scroll (solo para anclas en la misma página)
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section[id]');
+
+    // Cerrar menú móvil al hacer clic en un link
+    navLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
 
     function updateActiveNav() {
         // Solo actualizar si hay secciones en la página actual

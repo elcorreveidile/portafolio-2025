@@ -162,6 +162,7 @@ a:hover {
     align-items: center;
     gap: var(--spacing-md);
     flex-wrap: wrap;
+    position: relative;
 }
 
 .nav {
@@ -169,6 +170,28 @@ a:hover {
     justify-content: center;
     gap: var(--spacing-md);
     flex-wrap: wrap;
+}
+
+/* Botón hamburguesa - oculto por defecto en desktop */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+    transition: var(--transition);
+}
+
+.mobile-menu-toggle:hover {
+    transform: scale(1.1);
+}
+
+.mobile-menu-toggle:focus {
+    outline: 2px solid rgba(255,255,255,0.5);
+    outline-offset: 4px;
 }
 
 .nav-link {
@@ -1319,9 +1342,77 @@ a:hover {
         font-size: 1rem;
     }
 
+    /* Mostrar botón hamburguesa en móvil */
+    .mobile-menu-toggle {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    /* Ocultar menú por defecto en móvil */
     .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: var(--bg-secondary);
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0;
+        padding: 5rem 0 2rem;
+        transition: right 0.3s ease-in-out;
+        z-index: 1000;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+        overflow-y: auto;
+    }
+
+    /* Menú abierto */
+    .nav.active {
+        right: 0;
+    }
+
+    .nav-link {
+        width: 100%;
+        padding: 1rem 2rem;
+        border-radius: 0;
+        text-align: left;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        color: var(--text-primary);
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        background: rgba(102, 126, 234, 0.1);
+        color: var(--color-accent);
+    }
+
+    /* Overlay para cerrar menú */
+    .nav-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .nav-overlay.active {
+        display: block;
+        opacity: 1;
+    }
+
+    /* Theme toggle en el menú móvil */
+    .nav-wrapper .theme-toggle {
+        position: absolute;
+        right: 4rem;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     .chatbots-grid,
