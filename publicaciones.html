@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicaciones y obra literaria - Javier Benítez Laínez</title>
+    <meta name="description" content="Publicaciones y obra literaria: poemarios, ponencias, artículos y contribuciones académicas.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://elcorreveidile.github.io/portafolio-2025/publicaciones.html">
+    <meta property="og:title" content="Publicaciones y obra literaria - Javier Benítez Laínez">
+    <meta property="og:description" content="Publicaciones y obra literaria: poemarios, ponencias y artículos.">
+    <meta property="og:image" content="https://elcorreveidile.github.io/portafolio-2025/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Publicaciones y obra literaria - Javier Benítez Laínez">
+    <meta name="twitter:description" content="Publicaciones y obra literaria: poemarios, ponencias y artículos.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="header-title">Javier Benítez Laínez</h1>
+                <p class="header-subtitle">Innovación educativa · Literatura · Tecnología pedagógica</p>
+                <p class="header-institution">Centro de Lenguas Modernas - Universidad de Granada</p>
+            </div>
+            <div class="nav-wrapper">
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="innovacion.html" class="nav-link">Innovación</a>
+                    <a href="proyectos.html" class="nav-link">Proyectos</a>
+                    <a href="publicaciones.html" class="nav-link active">Publicaciones</a>
+                    <a href="actividades.html" class="nav-link">Actividades</a>
+                    <a href="contacto.html" class="nav-link">Contacto</a>
+                </nav>
+                <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section id="publicaciones" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Publicaciones y obra literaria</h2>
+
+            <div class="publications-list">
+                <article class="publication-item highlighted">
+                    <div class="pub-icon"><i class="fas fa-book"></i></div>
+                    <div class="pub-content">
+                        <h3>Versos sencillos para despistar a la poesía</h3>
+                        <p class="pub-meta">Poedrónomos Editorial · 2025</p>
+                        <p>Poemario que explora la simplicidad aparente como estrategia lírica</p>
+                        <div class="pub-actions">
+                            <a href="https://www.poedronomo.com/shop/p/versos-sencillos-para-despistar-a-la-poesa" target="_blank" class="btn btn-secondary btn-small">Ver libro</a>
+                            <button class="btn-share" onclick="compartir('Versos sencillos', 'https://www.poedronomo.com/shop/p/versos-sencillos-para-despistar-a-la-poesa')"><i class="fas fa-share-alt"></i></button>
+                        </div>
+                    </div>
+                    <span class="pub-badge published">Publicado</span>
+                </article>
+
+                <article class="publication-item">
+                    <div class="pub-icon"><i class="fas fa-presentation"></i></div>
+                    <div class="pub-content">
+                        <h3>Clínica Cultural: la miniserie web como experiencia de inmersión</h3>
+                        <p class="pub-meta">CIICEL 2025 · 11 sept · UGR</p>
+                        <div class="pub-actions">
+                            <a href="https://2025.ciicel.es/" target="_blank" class="btn btn-secondary btn-small">Ver congreso</a>
+                            <button class="btn-share" onclick="compartir('Ponencia CIICEL', 'https://2025.ciicel.es/')"><i class="fas fa-share-alt"></i></button>
+                        </div>
+                    </div>
+                    <span class="pub-badge conference">Congreso</span>
+                </article>
+
+                <article class="publication-item">
+                    <div class="pub-icon"><i class="fas fa-file-alt"></i></div>
+                    <div class="pub-content">
+                        <h3>Soria, con los ojos abiertos</h3>
+                        <p class="pub-meta">Homenaje a Andrés Soria Olmedo · 2025</p>
+                    </div>
+                    <span class="pub-badge preparation">En preparación</span>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Javier Benítez Laínez · Centro de Lenguas Modernas - Universidad de Granada</p>
+            <p class="footer-sub">Ecosistema de innovación educativa para la enseñanza del español</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

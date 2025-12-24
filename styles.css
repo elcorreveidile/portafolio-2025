@@ -286,6 +286,117 @@ a:hover {
     margin-top: 0.25rem;
 }
 
+/* ===== HERO MINIMAL (HOME PAGE) ===== */
+.hero-minimal {
+    padding: calc(var(--spacing-xl) * 1.5) 0;
+}
+
+.hero-title-large {
+    font-size: 5rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-inverse);
+    text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.hero-cta {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: var(--spacing-lg);
+}
+
+.btn-large {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* ===== ANNOUNCEMENT SECTION ===== */
+.announcement-section {
+    padding: var(--spacing-xl) 0;
+    background: var(--bg-secondary);
+}
+
+.announcement-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    max-width: 900px;
+    margin: 0 auto;
+    transition: var(--transition);
+    border: 3px solid transparent;
+    background-image: linear-gradient(var(--bg-card), var(--bg-card)),
+                      linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.announcement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.announcement-icon {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.announcement-icon i {
+    font-size: 3rem;
+    color: white;
+}
+
+.announcement-content {
+    flex: 1;
+}
+
+.announcement-title {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.announcement-description {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+}
+
+.btn-announcement {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.btn-announcement:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
 /* ===== SECTION HEADERS ===== */
 .section-header {
     text-align: center;
@@ -1167,47 +1278,75 @@ a:hover {
     html {
         font-size: 14px;
     }
-    
+
     .hero-title {
         font-size: 2.5rem;
     }
-    
+
+    .hero-title-large {
+        font-size: 3rem;
+    }
+
     .hero-stats {
         gap: var(--spacing-md);
     }
-    
+
+    .hero-cta {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
     .section-title {
         font-size: 2rem;
     }
-    
+
     .project-card.featured {
         grid-column: auto;
     }
-    
+
     .timeline {
         padding-left: 40px;
     }
-    
+
     .timeline::before {
         left: 10px;
     }
-    
+
     .timeline-icon {
         left: -30px;
         width: 40px;
         height: 40px;
         font-size: 1rem;
     }
-    
+
     .nav {
         flex-direction: column;
         gap: 0.5rem;
     }
-    
+
     .chatbots-grid,
     .features-grid,
     .methodology-grid {
         grid-template-columns: 1fr;
+    }
+
+    .announcement-card {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--spacing-md);
+    }
+
+    .announcement-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .announcement-icon i {
+        font-size: 2.5rem;
+    }
+
+    .announcement-title {
+        font-size: 1.5rem;
     }
 }
 
@@ -1221,8 +1360,21 @@ a:hover {
         font-size: 2rem;
     }
 
+    .hero-title-large {
+        font-size: 2.5rem;
+    }
+
     .stat-number {
         font-size: 2rem;
+    }
+
+    .btn-large {
+        padding: 0.875rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .announcement-title {
+        font-size: 1.25rem;
     }
 }
 
