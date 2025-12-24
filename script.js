@@ -50,43 +50,55 @@ document.addEventListener('DOMContentLoaded', function() {
             updateThemeIcon(newTheme);
         }
     });
-    // Actualizar navegación en scroll
+    // Actualizar navegación en scroll (solo para anclas en la misma página)
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section[id]');
-    
+
     function updateActiveNav() {
-        let currentSection = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (window.pageYOffset >= sectionTop - 100) {
-                currentSection = section.getAttribute('id');
-            }
-        });
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${currentSection}`) {
-                link.classList.add('active');
-            }
-        });
+        // Solo actualizar si hay secciones en la página actual
+        if (sections.length > 0) {
+            let currentSection = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= sectionTop - 100) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                // Solo gestionar links que son anclas
+                if (href && href.startsWith('#')) {
+                    link.classList.remove('active');
+                    if (href === `#${currentSection}`) {
+                        link.classList.add('active');
+                    }
+                }
+            });
+        }
     }
-    
+
     window.addEventListener('scroll', updateActiveNav);
     
-    // Navegación suave
+    // Navegación suave solo para anclas (links que empiezan con #)
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
             const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            if (targetSection) {
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = targetSection.offsetTop - headerHeight;
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+
+            // Solo aplicar scroll suave si es un ancla (#), no para páginas .html
+            if (targetId && targetId.startsWith('#')) {
+                e.preventDefault();
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = targetSection.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
             }
+            // Si no es un ancla, dejar que el navegador maneje el link normalmente
         });
     });
     
