@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Fondo circular con gradiente -->
+  <circle cx="50" cy="50" r="48" fill="url(#grad)"/>
+
+  <!-- Libro abierto (símbolo educativo) -->
+  <path d="M 25 40 Q 25 35, 30 35 L 48 35 L 48 65 L 30 65 Q 25 65, 25 60 Z" fill="white" opacity="0.9"/>
+  <path d="M 75 40 Q 75 35, 70 35 L 52 35 L 52 65 L 70 65 Q 75 65, 75 60 Z" fill="white" opacity="0.9"/>
+
+  <!-- Líneas del libro -->
+  <line x1="30" y1="42" x2="45" y2="42" stroke="#667eea" stroke-width="1.5" opacity="0.6"/>
+  <line x1="30" y1="47" x2="45" y2="47" stroke="#667eea" stroke-width="1.5" opacity="0.6"/>
+  <line x1="30" y1="52" x2="45" y2="52" stroke="#667eea" stroke-width="1.5" opacity="0.6"/>
+  <line x1="55" y1="42" x2="70" y2="42" stroke="#667eea" stroke-width="1.5" opacity="0.6"/>
+  <line x1="55" y1="47" x2="70" y2="47" stroke="#667eea" stroke-width="1.5" opacity="0.6"/>
+  <line x1="55" y1="52" x2="70" y2="52" stroke="#667eea" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- Estrella de innovación -->
+  <path d="M 50 20 L 52 27 L 59 27 L 53.5 31 L 55.5 38 L 50 34 L 44.5 38 L 46.5 31 L 41 27 L 48 27 Z" fill="#e67e22"/>
+</svg>
