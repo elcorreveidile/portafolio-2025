@@ -5,6 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javier Benítez Laínez - Portafolio 2025 | Innovación Educativa</title>
     <meta name="description" content="Ecosistema educativo innovador para la enseñanza del español: portales interactivos, chatbots IA, miniseries web y proyectos de inmersión cultural.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://elcorreveidile.github.io/portafolio-2025/">
+    <meta property="og:title" content="Javier Benítez Laínez - Portafolio 2025 | Innovación Educativa">
+    <meta property="og:description" content="Ecosistema educativo innovador para la enseñanza del español: 4 plataformas web, 3 chatbots IA, 15+ portales temáticos y aula virtual Moodle.">
+    <meta property="og:image" content="https://elcorreveidile.github.io/portafolio-2025/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://elcorreveidile.github.io/portafolio-2025/">
+    <meta name="twitter:title" content="Javier Benítez Laínez - Portafolio 2025 | Innovación Educativa">
+    <meta name="twitter:description" content="Ecosistema educativo innovador para la enseñanza del español: 4 plataformas web, 3 chatbots IA, 15+ portales temáticos y aula virtual Moodle.">
+    <meta name="twitter:image" content="https://elcorreveidile.github.io/portafolio-2025/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,14 +42,19 @@
                 <p class="header-subtitle">Innovación Educativa · Literatura · Tecnología Pedagógica</p>
                 <p class="header-institution">Centro de Lenguas Modernas - Universidad de Granada</p>
             </div>
-            <nav class="nav">
-                <a href="#inicio" class="nav-link">Inicio</a>
-                <a href="#innovacion" class="nav-link">Innovación</a>
-                <a href="#proyectos" class="nav-link">Proyectos</a>
-                <a href="#publicaciones" class="nav-link">Publicaciones</a>
-                <a href="#actividades" class="nav-link">Actividades</a>
-                <a href="#contacto" class="nav-link">Contacto</a>
-            </nav>
+            <div class="nav-wrapper">
+                <nav class="nav">
+                    <a href="#inicio" class="nav-link">Inicio</a>
+                    <a href="#innovacion" class="nav-link">Innovación</a>
+                    <a href="#proyectos" class="nav-link">Proyectos</a>
+                    <a href="#publicaciones" class="nav-link">Publicaciones</a>
+                    <a href="#actividades" class="nav-link">Actividades</a>
+                    <a href="#contacto" class="nav-link">Contacto</a>
+                </nav>
+                <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -210,66 +238,115 @@
             
             <div class="project-grid">
                 <article class="project-card featured">
-                    <div class="project-badge">★ Proyecto Estrella</div>
-                    <h3 class="project-title">Clínica Cultural y Lingüística de Español</h3>
-                    <div class="project-tags">
-                        <span class="tag">Web educativa</span>
-                        <span class="tag">Miniseries</span>
-                        <span class="tag">Inmersión</span>
+                    <div class="project-image-container">
+                        <img src="screenshots/clinica-cultural.jpg" alt="Captura de pantalla de Clínica Cultural y Lingüística" class="project-image" loading="lazy" onerror="this.style.display='none'">
+                        <div class="project-image-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Screenshot disponible próximamente</span>
+                        </div>
                     </div>
-                    <p>Plataforma innovadora con casos prácticos, generadores pedagógicos y miniseries web. Presentado en CIICEL 2025.</p>
-                    <div class="card-actions">
-                        <a href="https://clinica-cveaqg.manus.space/" target="_blank" class="btn btn-primary">
-                            <i class="fas fa-external-link-alt"></i> Visitar
-                        </a>
-                        <button class="btn-share" onclick="compartir('Clínica Cultural', 'https://clinica-cveaqg.manus.space/')">
-                            <i class="fas fa-share-alt"></i>
-                        </button>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <h3 class="project-title"><i class="fas fa-book-open"></i> Literatura Española</h3>
-                    <p>5 portales temáticos (Edad Media-Ilustración), quiz interactivo, generador de versos medievales</p>
-                    <div class="card-actions">
-                        <a href="https://elcorreveidile.github.io/Literatura/" target="_blank" class="btn btn-primary btn-small">Acceder</a>
-                        <button class="btn-share" onclick="compartir('Literatura Española', 'https://elcorreveidile.github.io/Literatura/')"><i class="fas fa-share-alt"></i></button>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <h3 class="project-title"><i class="fas fa-microphone"></i> Producción e Interacción Oral</h3>
-                    <p>B2.1: Webquest Ruta de Tapas, Aula de Cine, asistencia QR</p>
-                    <div class="card-actions">
-                        <a href="https://elcorreveidile.github.io/Produccion-Oral/" target="_blank" class="btn btn-primary btn-small">Acceder</a>
-                        <button class="btn-share" onclick="compartir('Producción Oral', 'https://elcorreveidile.github.io/Produccion-Oral/')"><i class="fas fa-share-alt"></i></button>
+                    <div class="project-content">
+                        <div class="project-badge">★ Proyecto Estrella</div>
+                        <h3 class="project-title">Clínica Cultural y Lingüística de Español</h3>
+                        <div class="project-tags">
+                            <span class="tag">Web educativa</span>
+                            <span class="tag">Miniseries</span>
+                            <span class="tag">Inmersión</span>
+                        </div>
+                        <p>Plataforma innovadora con casos prácticos, generadores pedagógicos y miniseries web. Presentado en CIICEL 2025.</p>
+                        <div class="card-actions">
+                            <a href="https://clinica-cveaqg.manus.space/" target="_blank" class="btn btn-primary">
+                                <i class="fas fa-external-link-alt"></i> Visitar
+                            </a>
+                            <button class="btn-share" onclick="compartir('Clínica Cultural', 'https://clinica-cveaqg.manus.space/')">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
                     </div>
                 </article>
 
                 <article class="project-card">
-                    <h3 class="project-title"><i class="fas fa-rocket"></i> Curso Intensivo</h3>
-                    <p>A1.2-A2.1: Gamificación, retos diarios, proyecto fotográfico</p>
-                    <div class="card-actions">
-                        <a href="https://elcorreveidile.github.io/Curso-Intensivo-Espanol/" target="_blank" class="btn btn-primary btn-small">Acceder</a>
-                        <button class="btn-share" onclick="compartir('Curso Intensivo', 'https://elcorreveidile.github.io/Curso-Intensivo-Espanol/')"><i class="fas fa-share-alt"></i></button>
+                    <div class="project-thumbnail">
+                        <img src="screenshots/literatura-espanola.jpg" alt="Literatura Española" loading="lazy" onerror="this.style.display='none'">
+                        <div class="thumbnail-placeholder">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                    </div>
+                    <div class="project-content-small">
+                        <h3 class="project-title"><i class="fas fa-book-open"></i> Literatura Española</h3>
+                        <p>5 portales temáticos (Edad Media-Ilustración), quiz interactivo, generador de versos medievales</p>
+                        <div class="card-actions">
+                            <a href="https://elcorreveidile.github.io/Literatura/" target="_blank" class="btn btn-primary btn-small">Acceder</a>
+                            <button class="btn-share" onclick="compartir('Literatura Española', 'https://elcorreveidile.github.io/Literatura/')"><i class="fas fa-share-alt"></i></button>
+                        </div>
                     </div>
                 </article>
 
                 <article class="project-card">
-                    <h3 class="project-title"><i class="fas fa-fist-raised"></i> UGT-CLM Granada</h3>
-                    <p>Web sindical con cursos de IA y negociación laboral</p>
-                    <div class="card-actions">
-                        <a href="https://ugtclmgranada.org/" target="_blank" class="btn btn-primary btn-small">Acceder</a>
-                        <button class="btn-share" onclick="compartir('UGT-CLM', 'https://ugtclmgranada.org/')"><i class="fas fa-share-alt"></i></button>
+                    <div class="project-thumbnail">
+                        <img src="screenshots/produccion-oral.jpg" alt="Producción e Interacción Oral" loading="lazy" onerror="this.style.display='none'">
+                        <div class="thumbnail-placeholder">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                    </div>
+                    <div class="project-content-small">
+                        <h3 class="project-title"><i class="fas fa-microphone"></i> Producción e Interacción Oral</h3>
+                        <p>B2.1: Webquest Ruta de Tapas, Aula de Cine, asistencia QR</p>
+                        <div class="card-actions">
+                            <a href="https://elcorreveidile.github.io/Produccion-Oral/" target="_blank" class="btn btn-primary btn-small">Acceder</a>
+                            <button class="btn-share" onclick="compartir('Producción Oral', 'https://elcorreveidile.github.io/Produccion-Oral/')"><i class="fas fa-share-alt"></i></button>
+                        </div>
                     </div>
                 </article>
 
                 <article class="project-card">
-                    <h3 class="project-title"><i class="fas fa-pen-fancy"></i> Olvidos de Granada</h3>
-                    <p>Revista cultural. Homenaje a Antonio Jiménez Millán</p>
-                    <div class="card-actions">
-                        <a href="https://olvidosdegranada.es/" target="_blank" class="btn btn-primary btn-small">Acceder</a>
-                        <button class="btn-share" onclick="compartir('Olvidos de Granada', 'https://olvidosdegranada.es/')"><i class="fas fa-share-alt"></i></button>
+                    <div class="project-thumbnail">
+                        <img src="screenshots/curso-intensivo.jpg" alt="Curso Intensivo" loading="lazy" onerror="this.style.display='none'">
+                        <div class="thumbnail-placeholder">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                    </div>
+                    <div class="project-content-small">
+                        <h3 class="project-title"><i class="fas fa-rocket"></i> Curso Intensivo</h3>
+                        <p>A1.2-A2.1: Gamificación, retos diarios, proyecto fotográfico</p>
+                        <div class="card-actions">
+                            <a href="https://elcorreveidile.github.io/Curso-Intensivo-Espanol/" target="_blank" class="btn btn-primary btn-small">Acceder</a>
+                            <button class="btn-share" onclick="compartir('Curso Intensivo', 'https://elcorreveidile.github.io/Curso-Intensivo-Espanol/')"><i class="fas fa-share-alt"></i></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-thumbnail">
+                        <img src="screenshots/ugt-clm.jpg" alt="UGT-CLM Granada" loading="lazy" onerror="this.style.display='none'">
+                        <div class="thumbnail-placeholder">
+                            <i class="fas fa-fist-raised"></i>
+                        </div>
+                    </div>
+                    <div class="project-content-small">
+                        <h3 class="project-title"><i class="fas fa-fist-raised"></i> UGT-CLM Granada</h3>
+                        <p>Web sindical con cursos de IA y negociación laboral</p>
+                        <div class="card-actions">
+                            <a href="https://ugtclmgranada.org/" target="_blank" class="btn btn-primary btn-small">Acceder</a>
+                            <button class="btn-share" onclick="compartir('UGT-CLM', 'https://ugtclmgranada.org/')"><i class="fas fa-share-alt"></i></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-thumbnail">
+                        <img src="screenshots/olvidos-granada.jpg" alt="Olvidos de Granada" loading="lazy" onerror="this.style.display='none'">
+                        <div class="thumbnail-placeholder">
+                            <i class="fas fa-pen-fancy"></i>
+                        </div>
+                    </div>
+                    <div class="project-content-small">
+                        <h3 class="project-title"><i class="fas fa-pen-fancy"></i> Olvidos de Granada</h3>
+                        <p>Revista cultural. Homenaje a Antonio Jiménez Millán</p>
+                        <div class="card-actions">
+                            <a href="https://olvidosdegranada.es/" target="_blank" class="btn btn-primary btn-small">Acceder</a>
+                            <button class="btn-share" onclick="compartir('Olvidos de Granada', 'https://olvidosdegranada.es/')"><i class="fas fa-share-alt"></i></button>
+                        </div>
                     </div>
                 </article>
             </div>
